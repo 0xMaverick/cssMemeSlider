@@ -91,6 +91,7 @@ body {
     height: 1.5rem;
     border-radius: 50%;
     background-color: #0000CD;
+    cursor: default;
 }
 
 .container-slider:has(#input1:checked) .slider-top {
@@ -143,4 +144,39 @@ body {
 
 .container-slider:has(#input5:checked) .text {
     transform: translateX(calc(-400% - 4rem));
+}
+
+@media (width < 1024px) {
+    .slider-bottom {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 1rem;
+        overflow: visible;
+    }
+
+    .controls {
+        order: 1;
+    }
+
+    .text {
+        order: 2;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .controls label {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .controls label .checkbox,
+    .controls label:has(input:checked) .checked {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .text span {
+        font-size: 1.5rem;
+    }
 }
